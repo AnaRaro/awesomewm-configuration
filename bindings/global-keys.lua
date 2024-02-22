@@ -185,7 +185,14 @@ awful.keyboard.append_global_keybindings {
             description = "move all clients to next screen",
             group = "client"
         }
-    )
+    ), awful.key(
+        {modkey}, "r", function()
+            awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log")
+        end, {
+            description = "run rofi",
+            group = "client"
+        }
+    ),
 }
 
 -- Launcher
